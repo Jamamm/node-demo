@@ -5,8 +5,11 @@ var server = http.createServer()  //创建一个web服务器
 
 //request请求事件处理函数，需要传入两个函数
 
-server.on('request', function () {
-    console.log("收到客户端的请求了")
+server.on('request', function (request, response) {
+    console.log("收到客户端的请求了,请求路径是："+ request.url)
+    response.write('hello')
+    response.write(' node.js')
+    response.end()
 
 })
 
