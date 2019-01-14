@@ -7,9 +7,20 @@ var server = http.createServer()  //创建一个web服务器
 
 server.on('request', function (request, response) {
     console.log("收到客户端的请求了,请求路径是："+ request.url)
-    response.write('hello')
-    response.write(' node.js')
-    response.end()
+    // response.write('hello')
+    // response.write(' node.js')
+    // response.end()
+
+    // response.end("hello world!")
+
+    var url = request.url
+    if(url === '/' || url === '/index'){
+        response.end("index")
+    }else if(url === '/login'){
+        response.end("login")
+    }else{
+        response.end('404 not found')
+    }
 
 })
 
