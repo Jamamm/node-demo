@@ -24,6 +24,7 @@ fs.readFile('./tpl.html', function (err, data) {
     }
 
     var ret = template.render(data.toString(), {
+        title: '个人信息',
         name: 'Jam',
         age: 16,
         province: '北京',
